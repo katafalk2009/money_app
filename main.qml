@@ -38,6 +38,23 @@ Window {
         anchors.leftMargin: width/5
         anchors.verticalCenter: _stat.verticalCenter
         text: qsTr("Add new spending")
+        onClicked: {
+            var component = Qt.createComponent("SpendMoneyWindow.qml");
+            var win = component.createObject(root);
+            win.show();
+        }
+    }
+    Button {
+        id: _new_income
+        anchors.top: _new.bottom
+        anchors.topMargin: 20
+        anchors.horizontalCenter: _new.horizontalCenter
+        text: qsTr("Add new income")
+        onClicked: {
+            var component = Qt.createComponent("IncomeWindow.qml");
+            var win = component.createObject(root);
+            win.show();
+        }
     }
     Button {
         id: _curr

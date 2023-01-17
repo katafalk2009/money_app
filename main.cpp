@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "balancelist.h"
+#include "changecurrencylist.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +12,7 @@ int main(int argc, char *argv[])
     BalanceList model;
 
     qmlRegisterType<BalanceList> ("Balance", 1, 0, "BalanceListModel");
+    qmlRegisterType<ChangeCurrencyList> ("ChangeCurrency", 1, 0, "ChangeCurrencyListModel");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

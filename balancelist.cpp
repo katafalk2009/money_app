@@ -11,17 +11,17 @@ int BalanceList::rowCount(const QModelIndex &parent) const
  Q_UNUSED(parent)
     return 3;
 }
-QHash<int,QByteArray>  BalanceList::roleNames() const
+QHash<int, QByteArray> BalanceList::roleNames() const
 {
     QHash<int,QByteArray> rez;
-    rez[QTY]="quantity";
-    rez[CURRENCY]="currency";
+    rez[QTY] = "quantity";
+    rez[CURRENCY] = "currency";
     return rez;
 }
 
-void BalanceList::update_data(int index, QVariant value)
+void BalanceList::update_data(int index, int value)
 {
-    m_balance_list[index] += value.toInt();;
+    m_balance_list[index] += value;
     emit dataChanged(createIndex(0, 0), createIndex(2, 0));
 }
 QVariant BalanceList::data(const QModelIndex &index, int role) const

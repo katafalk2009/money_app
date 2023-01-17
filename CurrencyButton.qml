@@ -1,15 +1,17 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-Button {
+Item {
+    id: root
     property alias button: _button
     property alias money: _qty.text
     property alias date: _date.text
     Button {
         id: _button
-        text: button_name
+        text: btn.toString()
         enabled: (money != "" && date != "") ? true : false
+        onClicked: update(index, money)
         function update(index, value) {
-        root.balance_list.model.update_data(index, value.toString())
+        _view.model.update(index, _view.balance_list.model, value)
         money = ""
         date = ""
         }
@@ -26,6 +28,6 @@ Button {
         width: _button.width
         anchors.left: _qty.right
         anchors.leftMargin: 5
-        placeholderText: qsTr("27.11.1991")
+        placeholderText: qsTr("01.01.2023")
     }
 }

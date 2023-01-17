@@ -4,7 +4,11 @@
         <file>BalanceField.qml</file>
         <file>BalanceList.qml</file>
         <file>CurrencyWindow.qml</file>
-        <file>SpendButton.qml</file>
-        <file>SpendGrid.qml</file>
+        <file>CurrencyButton.qml</file>
+        <file>ChangeCurrencyList.qml</file>
+        <file>SpendMoneyWindow.qml</file>
+        <file>SpendMoney.qml</file>
+        <file>IncomeWindow.qml</file>
+        <file>Income.qml</file>
     </qresource>
 </RCC>

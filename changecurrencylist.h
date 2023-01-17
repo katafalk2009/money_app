@@ -1,22 +1,24 @@
 #pragma once
 #include <QAbstractListModel>
+#include "balancelist.h"
 
 
-class BalanceList : public QAbstractListModel
+class ChangeCurrencyList : public QAbstractTableModel
 {
     Q_OBJECT
     enum RoleTypes
     {
-        QTY = Qt::UserRole+1,
-        CURRENCY
+        BUTTON = Qt::UserRole+1,
+        QTY,
+        DATE
     };
 public:
-    BalanceList(QObject* parent = nullptr);
+    ChangeCurrencyList(QObject* parent = nullptr);
     int rowCount(const QModelIndex& parent = QModelIndex {}) const override;
+    int columnCount(const QModelIndex& parent = QModelIndex {}) const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     QHash<int,QByteArray> roleNames() const override;
-    Q_INVOKABLE void update_data(int index, int value);
+    Q_INVOKABLE void update(int index, BalanceList* list, QVariant value);
 private:
-    std::vector<int> m_balance_list;
     std::vector<QString> m_currencies;
 };

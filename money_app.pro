@@ -6,6 +6,7 @@ QT += quick
 
 SOURCES += \
         balancelist.cpp \
+        changecurrencylist.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -22,6 +23,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    balancelist.h
+    balancelist.h \
+    changecurrencylist.h
 
 DISTFILES +=
